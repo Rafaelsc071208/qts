@@ -4,6 +4,10 @@
  */
 package gui;
 
+import dao.UsuarioDAO;
+import javax.swing.JOptionPane;
+import modelo.Usuario;
+
 /**
  *
  * @author CAMARGO
@@ -208,7 +212,27 @@ jTextField4.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+    // instanciando a classe Usuario do pacote modelo e criando seu objeto usuarios 
+Usuario usuarios = new Usuario(); 
+usuarios.setNome(jTextField1.getText()); 
+usuarios.setCpf(jTextField2.getText()); 
+usuarios.setEmail(jTextField3.getText()); 
+usuarios.setTelefone(jTextField4.getText()); 
+ 
+// fazendo a validação dos dados 
+if ((jTextField1.getText().isEmpty()) || (jTextField2.getText().isEmpty()) || 
+(jTextField3.getText().isEmpty()) || (jTextField4.getText().isEmpty())) {
+       JOptionPane.showMessageDialog(null, "Os campos não podem retornarvazios"); 
+} 
+else { 
+ 
+    // instanciando a classe UsuarioDAO do pacote dao e criando seu objeto dao 
+    UsuarioDAO dao = new UsuarioDAO(); 
+    dao.adiciona(usuarios); 
+    JOptionPane.showMessageDialog(null, "Usuário "+jTextField1.getText()+" inserido com sucesso! "); 
+} 
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -1,11 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package dao;
 
-import factory.ConnectionFactory; 
-import modelo.Usuario; 
-import java.sql.*; 
-import java.sql.PreparedStatement; 
- 
-public class UsuarioDAO { 
-    private Connection connection; 
+import factory.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import modelo.Usuario;
+
+/**
+ *
+ * @author CAMARGO
+ */
+public class UsuarioDAO {
+        private Connection connection; 
     Long id; 
     String nome; 
     String cpf; 
@@ -31,13 +41,5 @@ stmt.close();
 throw new RuntimeException(u); 
 } 
 } 
+    
 }
- 
- 
- 
- 
- 
- 
- 
- 
- 
